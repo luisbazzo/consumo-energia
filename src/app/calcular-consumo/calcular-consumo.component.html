@@ -1,1 +1,85 @@
-<p>calcular-consumo works!</p>
+<div class="container text-center"
+    style="
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px)
+    ">
+    <div class="row m-3 mb-5">
+        <div class="col">
+            <h1>Calculadora de Consumo Elétrico</h1>
+        </div>
+    </div>
+    <div class="row m-3 text-start">
+        <div class="col">
+            <label class="form-label">Quantas pessoas moram na casa?</label>
+            <input class="form-control" type="text" aria-describedby="quantPessoas" name="quantPessoas" [(ngModel)]="quantPessoas">
+        </div>
+        <div class="col">
+            <label class="form-label">Qual a quantidade de cômodos da casa?</label>
+            <input class="form-control" type="text" aria-describedby="quantComodos" name="quantComodos" [(ngModel)]="quantComodos">
+        </div>
+    </div>
+    <div class="row m-3 text-start">
+        <div class="col">
+            <label class="form-label">Quantas TVs tem na casa?</label>
+            <input class="form-control" type="text" aria-describedby="quantTVs" name="quantTVs" [(ngModel)]="quantTVs">
+        </div>
+        <div class="col">
+            <label class="form-label">Quantos computadores tem na casa?</label>
+            <input class="form-control" type="text" aria-describedby="quantPCs" name="quantPCs" [(ngModel)]="quantPCs">
+        </div>
+    </div>
+    <div class="row m-3 text-start mt-4">
+        <div class="col">
+            <label class="form-label">Qual o valor mensal da tarifa energética (consumo de Kw/Horas)? </label>
+            <input class="form-control" type="text" aria-describedby="valorTarifa" name="valorTarifa" [(ngModel)]="valorTarifa">
+        </div>
+        <div class="col-1 align-self-end">
+            <label class="form-label">Kw/H</label>
+        </div>
+    </div>
+    <div class="row m-3 text-start fs-6 mt-4 mb-4">
+        <div class="col">
+            <div class="form-text" style="color: #f1f1f1;">* Estará sendo considerado um tempo médio de 10 minutos no chuveiro para cada morador da casa.</div>
+        </div>
+    </div>
+    <div class="row m-3 text-center justify-content-evenly">
+        <div class="col-3 form-check mt-4">
+            <input type="checkbox" class="form-check-input" id="checkMaquina">
+            <label class="form-label">Tem máquina de lavar na casa?</label>
+        </div>
+        <div class="col-3 form-check mt-4">
+            <input type="checkbox" class="form-check-input" id="checkSecadora">
+            <label class="form-label">Tem secadora de roupas na casa?</label>
+        </div>
+    </div>
+    <div class="row m-3 text-center mt-5">
+        <div class="col">
+            <button class="btn btn-primary fs-3" (click)="calcularGasto()">Calcular Gasto</button>
+        </div>
+    </div>
+    <div class="row m-3 text-start mt-5">
+        <div class="col-2">
+            <input class="form-control text-center" type="text" value="Consumo Elétrico" disabled readonly>
+        </div>
+        <div class="col">
+            <input class="form-control" type="number" aria-describedby="energiaGasta" readonly name="energiaGasta" [value]="energiaGasta">
+        </div>
+        <div class="col-1 align-self-end">
+            <label class="form-label">Kw</label>
+        </div>
+    </div>
+    <div class="row m-3 text-start mt-3 mb-5">
+        <div class="col-2">
+            <input class="form-control text-center" type="text" value="Valor da Conta" disabled readonly>
+        </div>
+        <div class="col">
+            <input class="form-control" type="number" aria-describedby="valorContaLuz" readonly name="valorContaLuz" [value]="valorContaLuz">
+        </div>
+        <div class="col-1 align-self-end">
+            <label class="form-label">R$</label>
+        </div>
+    </div>
+</div>
